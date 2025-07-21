@@ -1,0 +1,1 @@
+/home/blackcurrent/.config/nvim/README.md
