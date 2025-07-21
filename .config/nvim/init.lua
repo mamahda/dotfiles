@@ -1,1 +1,1 @@
-/home/blackcurrent/.config/nvim/init.lua
+require("setup")

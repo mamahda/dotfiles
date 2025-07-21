@@ -1,1 +1,8 @@
-/home/blackcurrent/.config/ghostty/config
+theme = "catppuccin-macchiato.conf"
+font-family = "FiraCode Nerd Font Mono"
+font-size = 14
+background = 000000
+background-blur-radius = 20
+background-opacity = 0.99
+window-decoration = false
+clipboard-paste-protection = false 
