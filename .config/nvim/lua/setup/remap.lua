@@ -3,6 +3,18 @@ vim.keymap.set('n', '<leader>pv', function() vim.cmd('Ex') end)
 
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { silent = true })
 
+-- neovim tab
+--vim.keymap.set("n", "<A-t>", ":tabnew<CR>")
+--vim.keymap.set("n", "<A-w>", ":tabclose<CR>")
+--vim.keymap.set("n", "<A-l>", ":tabnext<CR>")
+--vim.keymap.set("n", "<A-h>", ":tabprev<CR>")
+
+-- bufferline neovim
+vim.keymap.set("n", "<A-t>", ":enew<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-w>", ":bdelete<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+
 -- move lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -32,7 +44,7 @@ vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- delete word mappings
-vim.keymap.set("n", "dw", "BvEd")
+vim.keymap.set("n", "dw", "bved")
 
 -- vim test mappings
 vim.keymap.set("n", "<leader>t", ":TestNearest<CR>", { silent = true })

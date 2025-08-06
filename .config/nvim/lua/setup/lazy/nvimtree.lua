@@ -9,7 +9,7 @@ return {
 
     require("nvim-tree").setup ({
       sort = {
-        sorter = "case_sensitive",
+        sorter = "extension",
       },
       view = {
         adaptive_size = true,

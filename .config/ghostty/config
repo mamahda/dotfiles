@@ -1,8 +1,8 @@
 theme = "catppuccin-macchiato.conf"
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
-background = 000000
+background = 0f0f0f
 background-blur-radius = 20
-background-opacity = 0.99
+background-opacity = 0.85
 window-decoration = false
 clipboard-paste-protection = false 

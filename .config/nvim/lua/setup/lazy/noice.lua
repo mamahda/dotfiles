@@ -25,7 +25,7 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            row = 0, -- Move it 2 rows up
+            row = 37, -- Move it 2 rows up
             col = "50%", -- Keep it centered
           },
           size = {
@@ -43,4 +43,3 @@ return {
     })
   end
 }
-
