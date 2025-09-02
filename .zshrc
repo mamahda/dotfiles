@@ -77,7 +77,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 alias v=nvim
-alias vpnits='sudo openvpn --config ~/vpn/myits.ovpn'
+alias vpnits="sudo openvpn --config ~/vpn/myits.ovpn"
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias cat="batcat"
 
@@ -109,7 +109,7 @@ alias cat="batcat"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/blackcurrent/.lmstudio/bin"
+#export PATH="$PATH:/home/blackcurrent/.lmstudio/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

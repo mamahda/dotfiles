@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>pv', function() vim.cmd('Ex') end)
 
+-- init.lua
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { silent = true })
 
 -- neovim tab
@@ -26,6 +28,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- move other window mappings
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
 
 -- nvim-tree mappings 
 vim.keymap.set("n", "<C-b>", vim.cmd.NvimTreeFindFileToggle)
