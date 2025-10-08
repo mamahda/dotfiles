@@ -21,3 +21,4 @@ vim.opt.scrolloff = 8
 
 vim.g.mapleader = " "
 
+vim.o.guifont = "FiraCode Nerd Font:h14"

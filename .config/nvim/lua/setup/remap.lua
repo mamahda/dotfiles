@@ -12,10 +12,10 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>", { silent = true })
 --vim.keymap.set("n", "<A-h>", ":tabprev<CR>")
 
 -- bufferline neovim
-vim.keymap.set("n", "<A-t>", ":enew<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-w>", ":bdelete<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-t>", ":enew<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-w>", ":bdelete<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
 -- move lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -26,10 +26,10 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- move other window mappings
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<A-h>", "<C-w>h")
+vim.keymap.set("n", "<A-l>", "<C-w>l")
+vim.keymap.set("n", "<A-j>", "<C-w>j")
+vim.keymap.set("n", "<A-k>", "<C-w>k")
 
 -- nvim-tree mappings 
 vim.keymap.set("n", "<C-b>", vim.cmd.NvimTreeFindFileToggle)
@@ -48,7 +48,7 @@ vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- delete word mappings
-vim.keymap.set("n", "dw", "bved")
+vim.keymap.set("n", "dw", "diw")
 
 -- vim test mappings
 vim.keymap.set("n", "<leader>t", ":TestNearest<CR>", { silent = true })
