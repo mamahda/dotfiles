@@ -2,20 +2,18 @@ return {
   "folke/noice.nvim",
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify", -- Optional: if you don't want to use it, remove this line
+    "rcarriga/nvim-notify", -- Optional
     "j-hui/fidget.nvim",    -- fidget.nvim for LSP progress
   },
   config = function()
-    -- Disable the default nvim-notify popups and set render minimal
     require("notify").setup({
-      background_colour = "#000000", -- Optional: Adjust background color
-      render = "minimal",            -- Use minimal rendering for notifications
+      background_colour = "#000000",
+      render = "minimal",
     })
 
-    -- Noice configuration
     require("noice").setup({
       cmdline = {
-        view = "cmdline_popup", -- Floating command line
+        view = "cmdline_popup",
         format = {
           cmdline = { pattern = "^:", icon = "", lang = "vim" },
           search_down = { kind = "search", pattern = "^/", icon = "🔍 ", lang = "regex" },
@@ -25,8 +23,8 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            row = 37, -- Move it 2 rows up
-            col = "50%", -- Keep it centered
+            row = 38,
+            col = "50%",
           },
           size = {
             width = 60,
@@ -35,11 +33,12 @@ return {
         },
       },
       messages = {
-        enabled = false, -- Disable default messages from noice
+        enabled = false,
       },
       popupmenu = {
-        enabled = true, -- Use a floating popup for command suggestions
+        enabled = true,
       }
     })
   end
 }
+

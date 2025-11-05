@@ -2,7 +2,6 @@ return {
   "github/copilot.vim",
   enabled = true,
   config = function()
-    -- Shortcut untuk toggle Copilot
     vim.api.nvim_set_keymap(
       "n",
       "<leader>ce",
@@ -17,7 +16,6 @@ return {
       { noremap = true, silent = true, desc = "Disable Copilot" }
     )
 
-    -- Optional: tampilkan status Copilot
     vim.api.nvim_set_keymap(
       "n",
       "<leader>cs",

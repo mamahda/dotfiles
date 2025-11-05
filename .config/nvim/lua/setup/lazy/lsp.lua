@@ -33,11 +33,12 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls",        -- Lua Language Server
-                "pyright",       -- Python Language Server (pyright)
-                "html",          -- HTML Language Server
-                "ts_ls",      -- TypeScript/JavaScript Language Server
-                "clangd",        -- C Language Server (clangd)
+                "lua_ls",       -- Lua Language Server
+                "pyright",      -- Python Language Server (pyright)
+                "html",         -- HTML Language Server
+                "ts_ls",        -- TypeScript/JavaScript Language Server
+                "clangd",       -- C Language Server (clangd)
+                "laravel_ls",   -- Laravel Language Server
             },
             handlers = {
                 -- Default handler for all LSP servers

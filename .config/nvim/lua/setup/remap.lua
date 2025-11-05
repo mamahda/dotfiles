@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
 vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, opts)
 
 -- select all mappings
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+vim.keymap.set("n", "<C-a>", "ggVG")
 
 -- delete word mappings
 vim.keymap.set("n", "dw", "diw")
