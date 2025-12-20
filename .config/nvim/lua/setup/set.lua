@@ -22,3 +22,7 @@ vim.opt.scrolloff = 8
 vim.g.mapleader = " "
 
 vim.o.guifont = "FiraCode Nerd Font:h14"
+
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })

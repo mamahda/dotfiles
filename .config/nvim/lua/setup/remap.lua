@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>pv', function() vim.cmd('Ex') end)
+vim.keymap.set('n', '<leader>dc', "f/v$di<CR><C-c>")
 
 -- init.lua
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
@@ -63,3 +64,80 @@ vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>")
 
 -- fugitive mappings
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+-- COPILOT
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ce",
+  ":Copilot enable<CR>",
+  { noremap = true, silent = true, desc = "Enable Copilot" }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>cd",
+  ":Copilot disable<CR>",
+  { noremap = true, silent = true, desc = "Disable Copilot" }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>cs",
+  ":Copilot status<CR>",
+  { noremap = true, silent = true, desc = "Copilot status" }
+)
+
+-- lspsaga
+-- Hover docs (K seperti VSCode)
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- Go to definition (gd)
+vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
+
+-- Finder: references, definitions (gh)
+vim.keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>", { silent = true })
+
+-- Code Action (leader + ca)
+vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+
+-- Rename (gr)
+vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+
+-- Outline panel (leader + o)
+vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
+
+-- Diagnostic jump
+vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+vim.keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+
+-- LSPSAGA
+-- Finder in horizontal split (gs)
+vim.keymap.set("n", "gs", function()
+  -- Split window horizontal (bawah)
+  vim.cmd("split")
+  -- Fokus ke window baru lalu jalankan finder
+  vim.cmd("wincmd j")
+  vim.cmd("Lspsaga goto_definition")
+end, { silent = true })
+
+-- Hover docs (K seperti VSCode)
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- Go to definition (gd)
+vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
+
+-- Finder: references, definitions (gh)
+vim.keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>", { silent = true })
+
+-- Code Action (leader + ca)
+vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+
+-- Rename (gr)
+vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+
+-- Outline panel (leader + o)
+vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
+
+-- Diagnostic jump
+vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+vim.keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
