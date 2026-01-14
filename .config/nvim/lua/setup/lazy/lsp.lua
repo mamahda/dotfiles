@@ -31,11 +31,12 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
-        "pyright",
-        "html",
-        "ts_ls",
+        -- "pyright",
+        -- "html",
+        -- "ts_ls",
         "clangd",
         "laravel_ls",
+        "gopls"
       },
 
       handlers = {

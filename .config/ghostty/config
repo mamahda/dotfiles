@@ -1,7 +1,9 @@
-font-family = "FiraCode"
+font-family = FiraCode
 font-size = 14
-background =000000 
-background-blur-radius = 20
-background-opacity = 0.9999999
-window-decoration = false
-clipboard-paste-protection = false 
+
+background = #090909
+background-opacity = 0.99999
+
+window-decoration = false 
+clipboard-paste-protection = false
+

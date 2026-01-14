@@ -19,7 +19,7 @@ return {
         },
       },
       renderer = {
-        group_empty = true,
+        group_empty = false,
       },
       filters = {
         dotfiles = false,

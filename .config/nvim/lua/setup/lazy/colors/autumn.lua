@@ -1,0 +1,111 @@
+-- -- ~/.config/nvim/lua/colors/autumn.lua
+-- -- Helix Autumn theme for Neovim
+-- -- Author: Jens Getreu (ported to Neovim by ChatGPT)
+--
+-- local palette = {
+--   black      = "#212121",
+--   brown      = "#cfba8b",
+--   gray0      = "#232323",
+--   gray1      = "#2b2b2b",
+--   gray2      = "#323232",
+--   gray3      = "#404040",
+--   gray4      = "#646f69",
+--   gray5      = "#646f69",
+--   gray6      = "#a8a8a8",
+--   gray7      = "#c8c8c8",
+--   gray8      = "#e8e8e8",
+--   green      = "#99be70",
+--   red        = "#F05E48",
+--   turquoise1 = "#86c1b9",
+--   turquoise2 = "#72a59e",
+--   white1     = "#F3F2CC",
+--   white2     = "#F3F2CC",
+--   white3     = "#F3F2CC",
+--   white4     = "#F3F2CC",
+--   yellow1    = "#FAD566",
+--   yellow2    = "#ffff9f",
+-- }
+--
+-- local hi = function(group, opts)
+--   vim.api.nvim_set_hl(0, group, opts)
+-- end
+--
+-- -- UI Elements
+-- hi("Normal",        { fg = palette.white1, bg = palette.gray0 })
+-- hi("CursorLine",    { bg = palette.gray3 })
+-- hi("CursorLineNr",  { fg = palette.gray7, bg = palette.gray0 })
+-- hi("LineNr",        { fg = palette.gray3, bg = palette.gray0 })
+-- hi("StatusLine",    { fg = palette.gray7, bg = palette.gray2 })
+-- hi("StatusLineNC",  { fg = palette.gray5, bg = palette.gray2 })
+-- hi("StatusLineInsert",{ fg = palette.black, bg = palette.gray6, bold = true })
+-- hi("StatusLineSelect",{ fg = palette.gray7, bg = palette.black, bold = true })
+-- hi("VertSplit",     { fg = palette.gray2 })
+-- hi("Visual",        { bg = palette.gray3 })
+-- hi("Cursor",        { fg = palette.black, bg = palette.white4 })
+-- hi("Pmenu",         { fg = palette.white1, bg = palette.gray2 })
+-- hi("PmenuSel",      { fg = palette.gray2, bg = palette.gray6 })
+-- hi("NormalFloat",   { fg = palette.white1, bg = palette.gray2 })
+-- hi("FloatBorder",   { fg = palette.gray7, bg = palette.gray2 })
+-- hi("Search",        { fg = palette.black, bg = palette.yellow1, bold = true })
+-- hi("IncSearch",     { fg = palette.black, bg = palette.yellow1, bold = true })
+--
+-- -- Syntax Highlighting
+-- hi("Comment",       { fg = palette.gray5, italic = true })
+-- hi("Constant",      { fg = palette.white3 })
+-- hi("String",        { fg = palette.green })
+-- hi("Character",     { fg = palette.turquoise1 })
+-- hi("Number",        { fg = palette.turquoise1 })
+-- hi("Boolean",       { fg = palette.turquoise1 })
+-- hi("Float",         { fg = palette.turquoise1 })
+-- hi("Identifier",    { fg = palette.yellow1 })
+-- hi("Function",      { fg = palette.yellow1 })
+-- hi("Statement",     { fg = palette.red })
+-- hi("Conditional",   { fg = palette.red })
+-- hi("Repeat",        { fg = palette.red })
+-- hi("Label",         { fg = palette.red })
+-- hi("Operator",      { fg = palette.white1 })
+-- hi("Variable",      { fg = palette.white1 })
+-- hi("Keyword",       { fg = palette.red })
+-- hi("Exception",     { fg = palette.red })
+-- hi("Type",          { fg = palette.white3, italic = true })
+-- hi("Special",       { fg = palette.yellow1 })
+-- hi("Underlined",    { fg = palette.turquoise2, underline = true })
+-- hi("Todo",          { fg = palette.yellow2, bg = palette.gray0, bold = true })
+--
+-- hi("cInclude",      { fg = palette.red })
+-- hi("goBlock",       { fg = palette.yellow1 })
+--
+-- vim.api.nvim_set_hl(0, "@variable", { fg = palette.white1 })
+--
+-- -- Diagnostics
+-- hi("DiagnosticError",       { fg = palette.red, undercurl = true })
+-- hi("DiagnosticWarn",        { fg = palette.yellow2, undercurl = false })
+-- hi("DiagnosticInfo",        { fg = palette.yellow2, undercurl = false })
+-- hi("DiagnosticHint",        { fg = palette.gray5, undercurl = true })
+-- hi("DiagnosticUnnecessary", { fg = palette.gray4, italic = true })
+--
+-- -- Git diff
+-- hi("DiffAdd",    { fg = palette.green })
+-- hi("DiffChange", { fg = palette.yellow2 })
+-- hi("DiffDelete", { fg = palette.red })
+-- hi("DiffText",   { fg = palette.gray5 })
+--
+-- -- Virtual Text / Inlay Hints / Extras
+-- hi("VirtualText",          { fg = palette.gray4, bg = palette.black })
+-- hi("LspInlayHint",         { fg = palette.gray4, italic = true })
+-- hi("LspInlayHintParameter",{ fg = palette.gray4 })
+-- hi("LspInlayHintType",     { fg = palette.gray4, italic = true })
+-- hi("JumpLabel",            { fg = palette.yellow2, bold = true })
+-- hi("Whitespace",           { fg = palette.gray6 })
+-- hi("Wrap",                 { fg = palette.gray4 })
+-- hi("CursorMatch",          { fg = palette.white1, bold = true, underline = true, bg = palette.black })
+--
+-- -- Extra UI Elements
+-- hi("Folded",       { fg = palette.gray6, bg = palette.gray2 })
+-- hi("MatchParen",   { fg = palette.white1, bold = true, underline = true, bg = palette.black })
+-- hi("SignColumn",   { fg = palette.gray7, bg = palette.gray0 })
+-- hi("WinSeparator", { fg = palette.gray2 })
+--
+-- -- nvim-tree
+-- hi("Directory", { fg = palette.turquoise1 })
+--
