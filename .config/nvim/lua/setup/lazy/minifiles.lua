@@ -1,76 +1,66 @@
 return {
   "echasnovski/mini.files",
-  event = "VeryLazy", -- Load the plugin lazily
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- Required dependency for some features
-  },
-  opts = function(_, opts)
-    opts.mappings = vim.tbl_deep_extend("force", opts.mappings or {}, {
+  event = "VeryLazy",
+  config = function(_, opts)
+    require("mini.files").setup(opts)
+
+    -- Membuat tampilan benar-benar clean (transparan)
+    vim.api.nvim_set_hl(0, "MiniFilesBorder", { bg = "none", fg = "#545c7e" })
+    vim.api.nvim_set_hl(0, "MiniFilesNormal", { bg = "none" })
+
+    -- Autocmd untuk keymap tambahan di dalam jendela mini.files
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "MiniFilesBufferCreate",
+      callback = function(args)
+        local buf_id = args.data.buf_id
+        -- Contoh: Map 'M-c' untuk copy path di dalam buffer mini.files
+        vim.keymap.set("n", "<M-c>", function()
+          local path = require("mini.files").get_fs_entry().path
+          vim.fn.setreg("+", path)
+          print("Path copied: " .. path)
+        end, { buffer = buf_id, desc = "Copy path" })
+      end,
+    })
+  end,
+
+  -- Pakai 'opts' secara langsung agar lebih ringkas
+  opts = {
+    mappings = {
       close = "q",
       go_in = "l",
       go_in_plus = "<CR>",
       go_out = "H",
       go_out_plus = "h",
-      reset = "<BS>",
-      reveal_cwd = ".",
-      show_help = "g?",
       synchronize = "s",
-      trim_left = "<",
-      trim_right = ">",
-    })
-
-    opts.custom_keymaps = {
-      open_tmux_pane = "<M-t>",
-      copy_to_clipboard = "<space>yy",
-      zip_and_copy = "<space>yz",
-      paste_from_clipboard = "<space>p",
-      copy_path = "<M-c>",
-      preview_image = "<space>i",
-      preview_image_popup = "<M-i>",
-    }
-
-    opts.windows = vim.tbl_deep_extend("force", opts.windows or {}, {
+    },
+    windows = {
       preview = true,
       width_focus = 30,
       width_preview = 80,
-    })
-
-    opts.options = vim.tbl_deep_extend("force", opts.options or {}, {
+    },
+    options = {
       use_as_default_explorer = true,
-      permanent_delete = false,
-    })
-    return opts
-  end,
+    },
+  },
 
   keys = {
     {
-      "<leader>e",
+      "<leader>e", -- Saya ganti ke 'm' agar tidak bentrok dengan nvim-tree
       function()
-        local buf_name = vim.api.nvim_buf_get_name(0)
-        local dir_name = vim.fn.fnamemodify(buf_name, ":p:h")
-        if vim.fn.filereadable(buf_name) == 1 then
-          require("mini.files").open(buf_name, true)
-        elseif vim.fn.isdirectory(dir_name) == 1 then
-          require("mini.files").open(dir_name, true)
-        else
-          require("mini.files").open(vim.uv.cwd(), true)
+        if not require("mini.files").close() then
+          require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
         end
       end,
-      desc = "Open mini.files (Directory of Current File or CWD if not exists)",
+      desc = "Open mini.files",
     },
     {
       "<leader>E",
       function()
-        require("mini.files").open(vim.uv.cwd(), true)
+        if not require("mini.files").close() then
+          require("mini.files").open(vim.uv.cwd(), true)
+        end
       end,
-      desc = "Open mini.files (cwd)",
+      desc = "Open mini.files (Root Directory)",
     },
   },
-
-  config = function(_, opts)
-    require("mini.files").setup(opts)
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
-  end,
 }
-

@@ -1,6 +1,10 @@
 -- General Neovim settings
+-- set leader key to space
+vim.g.mapleader = " "
 -- netrw is settings for file explorer
 vim.g.loaded_netrw = 1
+-- lua/setup/set.lua
+vim.opt.timeoutlen = 300 -- Set ke 300ms agar respons jauh lebih instan
 -- netrwPlugin is settings for file explorer plugins
 vim.g.loaded_netrwPlugin = 1
 -- Enable mouse support in all modes
@@ -28,7 +32,26 @@ vim.opt.termguicolors = true
 vim.opt.incsearch = true
 -- set scroll offset to keep context
 vim.opt.scrolloff = 8
--- set leader key to space
-vim.g.mapleader = " "
 -- set font for GUI versions of Neovim
 vim.o.guifont = "FiraCode Nerd Font:h14"
+
+vim.opt.mousescroll = "ver:3,hor:6"
+
+-- Simpan riwayat undo ke file
+vim.opt.undofile = true
+
+-- Tentukan folder penyimpanannya (opsional, agar tidak mengotori folder project)
+local undodir = vim.fn.expand("~/.local/share/nvim/undodir")
+if vim.fn.isdirectory(undodir) == 0 then
+    vim.fn.mkdir(undodir, "p")
+end
+vim.opt.undodir = undodir
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  callback = function()
+    local save_cursor = vim.fn.getpos(".")
+    vim.cmd([[%s/\s\+$//e]]) -- Hapus semua spasi di akhir baris
+    vim.fn.setpos(".", save_cursor)
+  end,
+})
