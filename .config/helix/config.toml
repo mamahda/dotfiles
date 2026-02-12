@@ -1,4 +1,4 @@
-theme = "autumn"
+theme = "sonokai"
 
 [editor]
 mouse = true
