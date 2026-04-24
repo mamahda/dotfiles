@@ -7,8 +7,9 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="/home/mamahda/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/mamahda/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
-export EDITOR=helix
-export VISUAL=helix
+export EDITOR=nvim
+export VISUAL=nvim
+export SUDO_EDITOR=nvim
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="gianu"
@@ -28,6 +29,7 @@ alias venv="source venv/bin/activate"
 alias pwn="ssh -i /home/mamahda/key hacker@dojo.pwn.college."
 alias hx=helix
 alias yz=yazi
+alias cchef="/opt/zen/zen-bin Downloads/cyberchef/CyberChef_v10.22.1.html"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init --cmd cd zsh)"

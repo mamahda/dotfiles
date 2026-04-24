@@ -27,3 +27,6 @@ vim.keymap.set("n", "<leader>dc", "f/v$di<CR><C-c>")
 
 -- Untuk nvim-tree (leader pv tetap bisa dipakai sebagai alternatif C-b)
 vim.keymap.set('n', '<leader>pv', ":NvimTreeToggle<CR>")
+
+-- Git Keymap
+vim.keymap.set('n', '<leader>GB', ':Git blame<CR>')

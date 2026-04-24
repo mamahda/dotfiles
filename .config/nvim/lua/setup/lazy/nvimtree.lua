@@ -20,8 +20,8 @@ return {
       view = {
         adaptive_size = true,
         width = {
-          min = 25,
-          max = 30,
+          min = 20,
+          max = 27,
         },
       },
       renderer = {

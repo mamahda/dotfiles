@@ -20,9 +20,9 @@ vim.opt.relativenumber = true
 -- Highlight the current line
 vim.opt.cursorline = true
 -- set tabs and indentation
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- set word wrapping
 vim.opt.wrap = true
@@ -31,7 +31,7 @@ vim.opt.termguicolors = true
 -- set search settings
 vim.opt.incsearch = true
 -- set scroll offset to keep context
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 5
 -- set font for GUI versions of Neovim
 vim.o.guifont = "FiraCode Nerd Font:h14"
 

@@ -4,6 +4,6 @@ font-size = 16
 background = #090909
 background-opacity = 0.999999
 
-window-decoration = true 
+window-decoration = false
 clipboard-paste-protection = false
 
