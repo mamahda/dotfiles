@@ -14,7 +14,7 @@ export SUDO_EDITOR=nvim
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="gianu"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting history)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting history zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,3 +39,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
 
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
