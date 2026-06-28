@@ -37,7 +37,7 @@ return {
 
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "lua_ls", "clangd", "laravel_ls", "gopls", "pylsp"
+        "lua_ls", "clangd", "laravel_ls", "gopls", "pylsp", "intelephense"
       },
 
       handlers = {
