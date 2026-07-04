@@ -3,7 +3,7 @@ return {
   name = "barbecue",
   version = "*",
   -- Load hanya saat LSP aktif, karena tanpa LSP, barbecue tidak bisa baca simbol
-  event = "LspAttach", 
+  event = "LspAttach",
   dependencies = {
     "SmiteshP/nvim-navic",
     "nvim-tree/nvim-web-devicons",
