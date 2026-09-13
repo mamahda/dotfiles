@@ -78,3 +78,7 @@ if ! shopt -oq posix; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/mamahda/.local/bin:$PATH"

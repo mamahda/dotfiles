@@ -1,7 +1,7 @@
 font-family = FiraCode
-font-size = 16
+font-size = 15
 
-background = #090909
+background = #000000
 background-opacity = 0.999999
 
 window-decoration = false
