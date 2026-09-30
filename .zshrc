@@ -12,9 +12,13 @@ export VISUAL=nvim
 export SUDO_EDITOR=nvim
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="gianu"
+ZSH_THEME="mamahda"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting history zsh-vi-mode)
+
+# The mamahda theme builds PROMPT with $(git_prompt_info) already expanded, which
+# the async git prompt can't hook into (it stays empty) - use the sync version
+zstyle ':omz:alpha:lib:git' async-prompt no
 
 source $ZSH/oh-my-zsh.sh
 
