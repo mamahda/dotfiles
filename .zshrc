@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim
 alias vim=nvim
 alias vpnits="sudo openvpn --config ~/vpn/myits.ovpn"
-alias vi="nvim \"\$(fzf --preview 'batcat --style=numbers --color=always {}' --preview-window=up:60%:wrap)\""
+alias vi="nvim \"\$(fzf --preview 'bat --style=numbers --color=always {}' --preview-window=up:60%:wrap)\""
 alias ll="la -F --group-directories-first -l"
 alias java="javac ./**/*.java && java"
 alias venv="source venv/bin/activate"
@@ -30,6 +30,8 @@ alias pwn="ssh -i /home/mamahda/key hacker@dojo.pwn.college."
 alias hx=helix
 alias yz=yazi
 alias cchef="/opt/zen/zen-bin Downloads/cyberchef/CyberChef_v10.22.1.html"
+alias php83="php-legacy"
+alias rn="ranger"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init --cmd cd zsh)"
