@@ -48,3 +48,12 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
 
 # Added by Antigravity CLI installer
 export PATH="/home/mamahda/.local/bin:$PATH"
+
+# Keep the prompt in the middle of the screen instead of the bottom edge:
+# print half a screen of newlines (scrolls old output up), then jump back up.
+autoload -Uz add-zsh-hook
+_prompt_center() {
+  local h=$(( LINES / 3 ))
+  (( h > 0 )) && print -n "${(pl:h::\n:)}\e[${h}A"
+}
+add-zsh-hook precmd _prompt_center
