@@ -21,7 +21,7 @@ return {
         adaptive_size = true,
         width = {
           min = 20,
-          max = 27,
+          max = 35,
         },
       },
       renderer = {
