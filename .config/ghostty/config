@@ -4,8 +4,14 @@ font-size = 14
 window-decoration = false
 clipboard-paste-protection = false
 
+background-opacity = 1
+background-blur = true
+
 window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
 
 theme = Tomorrow Night Bright
+
+# First window after Ghostty starts attaches to the boot-time tmux server
+initial-command = /home/mamahda/.local/bin/ghostty-tmux

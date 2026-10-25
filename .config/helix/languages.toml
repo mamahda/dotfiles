@@ -1,7 +1,0 @@
-[[language]]
-name = "sql"
-language-servers = ["sql-language-server"]
-
-[language-server.sql-language-server]
-command = "sql-language-server"
-args = ["up", "--method", "stdio"]

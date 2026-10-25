@@ -37,6 +37,16 @@ alias cchef="/opt/zen/zen-bin Downloads/cyberchef/CyberChef_v10.22.1.html"
 alias php83="php-legacy"
 alias rn="ranger"
 
+# Plain `tmux` attaches to the existing (restored) session instead of piling up
+# new ones; use `tmux new` explicitly when a fresh session is wanted
+tmux() {
+  if (( $# == 0 )); then
+    command tmux attach 2>/dev/null || command tmux new-session
+  else
+    command tmux "$@"
+  fi
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init --cmd cd zsh)"
 

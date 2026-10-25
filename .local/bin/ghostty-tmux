@@ -1,0 +1,8 @@
+#!/bin/sh
+# Attach Ghostty's first window to the tmux server that tmux.service starts at
+# login (the one tmux-resurrect restores into). If that server is gone, start it
+# through systemd so it never becomes a child of Ghostty.
+if ! tmux has-session 2>/dev/null; then
+    systemctl --user start tmux.service
+fi
+tmux attach 2>/dev/null || exec tmux new-session
