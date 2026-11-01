@@ -1,3 +1,5 @@
-require("setup.remap")
 require("setup.set")
+require("setup.remap")
+require("setup.autocmds")
 require("setup.lazy_init")
+require("setup.colorscheme")

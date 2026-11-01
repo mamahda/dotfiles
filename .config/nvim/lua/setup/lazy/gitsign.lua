@@ -2,10 +2,7 @@ return {
   "lewis6991/gitsigns.nvim",
   -- Plugin baru aktif kalau kamu buka file yang ada di folder Git
   event = { "BufReadPre", "BufNewFile" },
-  keys = {
-    { "<leader>gp", ":Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
-    { "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", desc = "Toggle Blame" },
-  },
+  cmd = "Gitsigns", -- keymap di remap.lua
   config = function ()
     require('gitsigns').setup({
       -- Tanda di pinggir kiri

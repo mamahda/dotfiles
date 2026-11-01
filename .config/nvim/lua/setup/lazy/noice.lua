@@ -31,7 +31,9 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            row = "100%", -- Pakai % supaya aman di semua ukuran layar
+            -- Angka negatif = dihitung dari bawah layar.
+            -- -2 = border bawah popup tepat di atas statusline (cmdheight = 0)
+            row = -2,
             col = "50%",
           },
           size = {
@@ -51,9 +53,5 @@ return {
         enabled = true,
       }
     })
-    -- Shortcut untuk tutup semua notifikasi yang numpuk
-    vim.keymap.set("n", "<leader>nd", function()
-        require("notify").dismiss({ silent = true, pending = true })
-    end, { desc = "Dismiss All Notifications" })
   end
 }

@@ -7,12 +7,6 @@ return {
     "nvim-tree/nvim-web-devicons",
     "famiu/bufdelete.nvim",
   },
-  keys = {
-    { "<C-t>", ":enew<CR>", desc = "New Buffer" },
-    { "<C-w>", ":Bdelete<CR>", desc = "Delete Buffer" },
-    { "<C-l>", ":BufferLineCycleNext<CR>", desc = "Next Buffer" },
-    { "<C-h>", ":BufferLineCyclePrev<CR>", desc = "Prev Buffer" },
-  },
   config = function()
     require("bufferline").setup {
       options = {

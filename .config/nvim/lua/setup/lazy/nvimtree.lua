@@ -2,18 +2,13 @@ return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
   lazy = false,
-  -- Pindahkan keymap dari remap.lua ke sini agar lazy-load jalan
-  keys = {
-    { "<C-b>", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle NvimTree" },
-    { "<leader>ta", function() require("nvim-tree.api").tree.expand_all() end, desc = "Tree Expand All" },
-    -- Tekan <leader>tc untuk tutup semua folder (collapse)
-    { "<leader>tc", function() require("nvim-tree.api").tree.collapse_all() end, desc = "Tree Collapse All" },
-  },
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
     require("nvim-tree").setup({
+      -- cwd & root tree selalu sinkron dua arah
+      sync_root_with_cwd = true,
       sort = {
         sorter = "extension",
       },
@@ -45,6 +40,10 @@ return {
       },
       -- Opsional: Tutup nvim-tree otomatis kalau dia tinggal satu-satunya window
       actions = {
+        change_dir = {
+          enable = true,
+          global = true, -- <C-]> / - di tree pakai :cd (bukan :lcd)
+        },
         open_file = {
           quit_on_open = false, -- Tetap buka sidebar setelah pilih file
         },
